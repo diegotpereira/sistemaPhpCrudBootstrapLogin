@@ -1,4 +1,4 @@
-<!--<?php include_once('config.php');?> -->
+<?php include_once('config.php');?>
 <!doctype html>
 <html lang="en-US" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:addthis="https://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#" class="no-js">
 <head>
@@ -44,14 +44,14 @@
 	
 	<?php
 	$condition	=	'';
-	if(isset($_REQUEST['username']) and $_REQUEST['username']!=""){
-		$condition	.=	' AND username LIKE "%'.$_REQUEST['username'].'%" ';
+	if(isset($_REQUEST['usuario_nome']) and $_REQUEST['usuario_nome']!=""){
+		$condition	.=	' AND usuario_nome LIKE "%'.$_REQUEST['usuario_nome'].'%" ';
 	}
-	if(isset($_REQUEST['useremail']) and $_REQUEST['useremail']!=""){
-		$condition	.=	' AND useremail LIKE "%'.$_REQUEST['useremail'].'%" ';
+	if(isset($_REQUEST['usuario_email']) and $_REQUEST['usuario_email']!=""){
+		$condition	.=	' AND usuario_email LIKE "%'.$_REQUEST['usuario_email'].'%" ';
 	}
-	if(isset($_REQUEST['userphone']) and $_REQUEST['userphone']!=""){
-		$condition	.=	' AND userphone LIKE "%'.$_REQUEST['userphone'].'%" ';
+	if(isset($_REQUEST['usuario_telefone']) and $_REQUEST['usuario_telefone']!=""){
+		$condition	.=	' AND usuario_telefone LIKE "%'.$_REQUEST['usuario_telefone'].'%" ';
 	}
 	if(isset($_REQUEST['df']) and $_REQUEST['df']!=""){
 
@@ -64,12 +64,12 @@
 
 	}
 	
-	// $userData	=	$db->getAllRecords('users','*',$condition,'ORDER BY id DESC');
+	$userData	=	$db->getAllRecords('tab_usuario','*',$condition,'ORDER BY usuario_id DESC');
 	?>
    	<div class="container">
 		<h1><a href=""></a></h1>
 		<div class="card">
-			<div class="card-header"><i class="fa fa-fw fa-globe"></i> <strong>Navegar</strong> <a href="add-users.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-plus-circle"></i> Novo Usuário</a></div>
+			<div class="card-header"><i class="fa fa-fw fa-globe"></i> <strong>Navegar</strong> <a href="add-usuario.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-plus-circle"></i> Novo Usuário</a></div>
 			<div class="card-body">
 				<?php
 				if(isset($_REQUEST['msg']) and $_REQUEST['msg']=="rds"){
@@ -89,19 +89,19 @@
 							<div class="col-sm-2">
 								<div class="form-group">
 									<label>Usuário Nome</label>
-									<input type="text" name="username" id="username" class="form-control" value="<?php echo isset($_REQUEST['username'])?$_REQUEST['username']:''?>" placeholder="Digite seu nome">
+									<input type="text" name="usuario_nome" id="usuario_nome" class="form-control" value="<?php echo isset($_REQUEST['usuario_nome'])?$_REQUEST['usuario_nome']:''?>" placeholder="Digite seu nome">
 								</div>
 							</div>
 							<div class="col-sm-2">
 								<div class="form-group">
 									<label>Usuário Email</label>
-									<input type="email" name="useremail" id="useremail" class="form-control" value="<?php echo isset($_REQUEST['useremail'])?$_REQUEST['useremail']:''?>" placeholder="Digite seu e-mail">
+									<input type="email" name="usuario_email" id="usuario_email" class="form-control" value="<?php echo isset($_REQUEST['usuario_email'])?$_REQUEST['usuario_email']:''?>" placeholder="Digite seu e-mail">
 								</div>
 							</div>
 							<div class="col-sm-2">
 								<div class="form-group">
 									<label>Usuário Telefone</label>
-									<input type="tel" name="userphone" id="userphone" class="form-control" value="<?php echo isset($_REQUEST['userphone'])?$_REQUEST['userphone']:''?>" placeholder="Digite seu telefone">
+									<input type="tel" name="usuario_telefone" id="usuario_telefone" class="form-control" value="<?php echo isset($_REQUEST['usuario_telefone'])?$_REQUEST['usuario_telefone']:''?>" placeholder="Digite seu telefone">
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -156,13 +156,13 @@
 					?> -->
 					<tr>
 						<td><?php echo $s;?></td>
-						<td><?php echo $val['username'];?></td>
-						<td><?php echo $val['useremail'];?></td>
-						<td><?php echo $val['userphone'];?></td>
+						<td><?php echo $val['usuario_nome'];?></td>
+						<td><?php echo $val['usuario_email'];?></td>
+						<td><?php echo $val['usuario_telefone'];?></td>
 						<td align="center"><?php echo date('Y-m-d',strtotime($val['dt']));?></td>
 						<td align="center">
-							<a href="edit-users.php?editId=<?php echo $val['id'];?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a> | 
-							<a href="delete.php?delId=<?php echo $val['id'];?>" class="text-danger" onClick="return confirm('Are you sure to delete this user?');"><i class="fa fa-fw fa-trash"></i> Delete</a>
+							<a href="edit-users.php?editId=<?php echo $val['usuario_id'];?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a> | 
+							<a href="delete.php?delId=<?php echo $val['usuario_id'];?>" class="text-danger" onClick="return confirm('Are you sure to delete this user?');"><i class="fa fa-fw fa-trash"></i> Delete</a>
 						</td>
 
 					</tr>
