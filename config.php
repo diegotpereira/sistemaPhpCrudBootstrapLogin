@@ -12,6 +12,7 @@ try {
 }catch (PDOException $e) {
 	echo "Connection failed: " . $e->getMessage();
 }
-$db 	=	new Database($pdo);
+$conexao = mysqli_connect(SS_DB_HOST, SS_DB_USER, SS_DB_PASSWORD, SS_DB_NAME) or die ('Não foi possível conectar');
+//$db 	=	new Database($pdo);
 ?>
 
