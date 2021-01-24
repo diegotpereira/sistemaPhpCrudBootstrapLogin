@@ -102,7 +102,7 @@ if (isset($_REQUEST['submit']) and $_REQUEST['submit'] != "") {
         }
         ?>
         <div class="card">
-            <div class="card-header"><i class="fa fa-fw fa-plus-circle"></i> <strong>Novo Usuário</strong> <a href="home.php" class="float-rigth btn btn-dark btn-sm"><i class="fa fa-fw fa-globe"></i>Navegar</a></div>
+        <div class="card-header"><i class="fa fa-fw fa-plus-circle"></i> <strong>Novo Usuário</strong> <a href="home.php" class="float-right btn btn-dark btn-sm"><i class="fa fa-fw fa-globe"></i> Navegar</a></div>
             <div class="card-body">
                 <div class="col-sm-6">
                     <h5 class="card-title">Campos com <span class="text-danger">*</span> é obriatório!</h5>

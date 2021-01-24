@@ -12,7 +12,7 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 		exit;
 	}else{
 		
-		$userCount	=	$db->getQueryCount('tab_usuario','id');
+		$userCount	=	$db->getQueryCount('tab_usuario','usuario_id');
 		if($userCount[0]['total']<20){
 			$data	=	array(
 							'usuario_nome'=>$usuario_nome,

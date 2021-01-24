@@ -161,8 +161,8 @@
 						<td><?php echo $val['usuario_telefone'];?></td>
 						<td align="center"><?php echo date('Y-m-d',strtotime($val['dt']));?></td>
 						<td align="center">
-							<a href="edit-users.php?editId=<?php echo $val['usuario_id'];?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a> | 
-							<a href="delete.php?delId=<?php echo $val['usuario_id'];?>" class="text-danger" onClick="return confirm('Are you sure to delete this user?');"><i class="fa fa-fw fa-trash"></i> Delete</a>
+							<a href="edit-usuario.php?editId=<?php echo $val['usuario_id'];?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Editar</a> | 
+							<a href="delete.php?delId=<?php echo $val['usuario_id'];?>" class="text-danger" onClick="return confirm('Are you sure to delete this user?');"><i class="fa fa-fw fa-trash"></i> Deletar</a>
 						</td>
 
 					</tr>
