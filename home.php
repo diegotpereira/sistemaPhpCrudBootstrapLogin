@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Home</title>
 	
-	<link rel="shortcut icon" href="https://demo.learncodeweb.com/favicon.ico">
+	<link rel="shortcut icon" href="">
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -28,7 +28,7 @@
 							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-559" class="nav-item"><a title="WordPress" href="" class="nav-link">Sobre</a></li>
 							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-15" class="nav-item"><a title="Snippets" href="" class="nav-link">Ajuda</a></li>
 						</ul>
-						<form method="get" action="https://learncodeweb.com" class="form-inline my-2 my-lg-0">
+						<form method="get" action="" class="form-inline my-2 my-lg-0">
 							<div class="input-group input-group-md">
 								<input type="text" class="form-control search-width" name="s" id="search" value="" placeholder="Buscar..." aria-label="Search">
 								<div class="input-group-append">
