@@ -1,41 +1,34 @@
 <?php include_once('config.php');
-if (isset($_REQUEST['editId']) and $_REQUEST['editId'] != "") {
-    # code...
-    $row   =  $db->getAllRecords('usuarios', '*', 'AND id="'. $_REQUEST['editId']. '"');
-}
-if (isset($_REQUEST['submit']) and $_REQUEST['submit'] != "") {
-    # code...
-    extract($_REQUEST);
-    if ($usuario_nome == "") {
-        # code...
-        header('location:' . $_SERVER['PHP_SELF'] .'?msg=un&editId='. $_REQUEST['editId']);
-        exit;
-    } elseif ($usuario_email == "") {
-        # code...'
-        header('location:' . $_SERVER['PHP_SELF'] .'?msg=ue&editId='. $_REQUEST['editId']);
-        exit;
-    } elseif ($usuario_telefone == "") {
-        # code...
-        header('location:' . $_SERVER['PHP_SELF'] .'?msg=up&editId'. $_REQUEST['editId']);
-        exit;
-    }
-    $data = array(
-        'usuario_nome' => $usuario_nome,
-        'usuario_email' => $usuario_email,
-        'usuario_telefone' => $usuario_telefone,
-                );
-    $update = $db->update('usuarios', $data, array('id' => $edit));
-    if ($update) {
-        # code...
-        header('location: home.php?msg=rus');
-        exit;
-    } else {
-        # code...
-        header('location:home.php?msg=rnu');
-        exit;
-    }
+if(isset($_REQUEST['editId']) and $_REQUEST['editId']!=""){
+	$row	=	$db->getAllRecords('tab_usuario','*',' AND id="'.$_REQUEST['editId'].'"');
 }
 
+if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
+	extract($_REQUEST);
+	if($usuario_nome==""){
+		header('location:'.$_SERVER['PHP_SELF'].'?msg=un&editId='.$_REQUEST['editId']);
+		exit;
+	}elseif($usuario_email==""){
+		header('location:'.$_SERVER['PHP_SELF'].'?msg=ue&editId='.$_REQUEST['editId']);
+		exit;
+	}elseif($usuario_telefone==""){
+		header('location:'.$_SERVER['PHP_SELF'].'?msg=up&editId='.$_REQUEST['editId']);
+		exit;
+	}
+	$data	=	array(
+					'usuario_nome'=>$usuario_nome,
+					'usuario_email'=>$usuario_email,
+					'usuario_telefone'=>$usuario_telefone,
+					);
+	$update	=	$db->update('tab_usuario',$data,array('id'=>$editId));
+	if($update){
+		header('location: home.php?msg=rus');
+		exit;
+	}else{
+		header('location: home.php?msg=rnu');
+		exit;
+	}
+}
 ?>
 <!doctype html>
 <html lang="pt-br" xmlns="https://www.facebook.com/2008/fbml" xmlns.addthis="https://addthis.com/help/api-spec" prefix="og: http://ogp.me/ns#" class="no-js">
@@ -59,12 +52,12 @@ if (isset($_REQUEST['submit']) and $_REQUEST['submit'] != "") {
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                            <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-17" class="active nav-item"><a title="Home" href="https://learncodeweb.com/" class="nav-link">Home</a></li>
-                            <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-16" class="nav-item"><a title="Web Development" href="https://learncodeweb.com/learn/web-development/" class="nav-link">Web Development</a></li>
-                            <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-558" class="nav-item"><a title="PHP" href="https://learncodeweb.com/learn/php/" class="nav-link">PHP</a></li>
-                            <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-14" class="nav-item"><a title="Bootstrap" href="https://learncodeweb.com/learn/bootstrap-framework/" class="nav-link">Bootstrap</a></li>
-                            <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-559" class="nav-item"><a title="WordPress" href="https://learncodeweb.com/learn/wordpress/" class="nav-link">WordPress</a></li>
-                            <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-15" class="nav-item"><a title="Snippets" href="https://learncodeweb.com/learn/snippets/" class="nav-link">Snippets</a></li>
+                            <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-17" class="active nav-item"><a title="Home" href="" class="nav-link">Home</a></li>
+							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-16" class="nav-item"><a title="Web Development" href="" class="nav-link">Projetos</a></li>
+							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-558" class="nav-item"><a title="PHP" href="" class="nav-link">Interesses</a></li>
+							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-14" class="nav-item"><a title="Bootstrap" href="" class="nav-link">Artigos</a></li>
+							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-559" class="nav-item"><a title="WordPress" href="" class="nav-link">Sobre</a></li>
+							<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-15" class="nav-item"><a title="Snippets" href="" class="nav-link">Ajuda</a></li>
                         </ul>
                     
                         <form method="get" action="" class="form-inline my-2 my-lg-0">

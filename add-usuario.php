@@ -12,7 +12,7 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 		exit;
 	}else{
 		
-		$userCount	=	$db->getQueryCount('tab_usuario','usuario_id');
+		$userCount	=	$db->getQueryCount('tab_usuario','id');
 		if($userCount[0]['total']<20){
 			$data	=	array(
 							'usuario_nome'=>$usuario_nome,
@@ -54,16 +54,6 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-
-	<!--[if lt IE 9]>
-
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
-	<![endif]-->
 
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
@@ -193,27 +183,27 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 
 		if(isset($_REQUEST['msg']) and $_REQUEST['msg']=="un"){
 
-			echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> User name is mandatory field!</div>';
+			echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> O nome de usuário é um campo obrigatório!</div>';
 
 		}elseif(isset($_REQUEST['msg']) and $_REQUEST['msg']=="ue"){
 
-			echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> User email is mandatory field!</div>';
+			echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> O e-mail do usuário é um campo obrigatório!</div>';
 
 		}elseif(isset($_REQUEST['msg']) and $_REQUEST['msg']=="up"){
 
-			echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> User phone is mandatory field!</div>';
+			echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> O telefone do usuário é um campo obrigatório!</div>';
 
 		}elseif(isset($_REQUEST['msg']) and $_REQUEST['msg']=="ras"){
 
-			echo	'<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Record added successfully!</div>';
+			echo	'<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Registro adicionado com sucesso!</div>';
 
 		}elseif(isset($_REQUEST['msg']) and $_REQUEST['msg']=="rna"){
 
-			echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Record not added <strong>Please try again!</strong></div>';
+			echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Registro não adicionado <strong>Por favor, tente novamente!</strong></div>';
 
 		}elseif(isset($_REQUEST['msg']) and $_REQUEST['msg']=="dsd"){
 
-			echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Please delete a user and then try again <strong>We set limit for security reasons!</strong></div>';
+			echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Exclua um usuário e tente novamente <strong> Definimos um limite por razões de segurança!</strong></div>';
 
 		}
 

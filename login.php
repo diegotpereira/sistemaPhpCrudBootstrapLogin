@@ -10,7 +10,7 @@ if(empty($_POST['usuario_nome']) || empty($_POST['usuario_senha'])) {
 $usuario_nome = mysqli_real_escape_string($conexao, $_POST['usuario_nome']);
 $usuario_senha = mysqli_real_escape_string($conexao, $_POST['usuario_senha']);
 
-$query = "select usuario_nome from tab_usuario where usuario_nome = '{$usuario_nome}' and usuario_senha = md5('{$usuario_senha}')";
+$query = "select usuario_nome from tab_login where usuario_nome = '{$usuario_nome}' and usuario_senha = md5('{$usuario_senha}')";
 
 $result = mysqli_query($conexao, $query);
 

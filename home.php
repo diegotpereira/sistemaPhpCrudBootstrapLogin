@@ -64,7 +64,7 @@
 
 	}
 	
-	$userData	=	$db->getAllRecords('tab_usuario','*',$condition,'ORDER BY usuario_id DESC');
+	$userData	=	$db->getAllRecords('tab_usuario','*',$condition,'ORDER BY id DESC');
 	?>
    	<div class="container">
 		<h1><a href=""></a></h1>
@@ -73,13 +73,13 @@
 			<div class="card-body">
 				<?php
 				if(isset($_REQUEST['msg']) and $_REQUEST['msg']=="rds"){
-					echo	'<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Record deleted successfully!</div>';
+					echo	'<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Registro excluído com sucesso!</div>';
 				}elseif(isset($_REQUEST['msg']) and $_REQUEST['msg']=="rus"){
-					echo	'<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Record updated successfully!</div>';
+					echo	'<div class="alert alert-success"><i class="fa fa-thumbs-up"></i> Registro atualizado com sucesso!</div>';
 				}elseif(isset($_REQUEST['msg']) and $_REQUEST['msg']=="rnu"){
-					echo	'<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> You did not change any thing!</div>';
+					echo	'<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> Você não mudou nada!</div>';
 				}elseif(isset($_REQUEST['msg']) and $_REQUEST['msg']=="rna"){
-					echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> There is some thing wrong <strong>Please try again!</strong></div>';
+					echo	'<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> Há algo errado <strong>Por favor, tente novamente!</strong></div>';
 				}
 				?>
 				<div class="col-sm-12">
@@ -139,7 +139,7 @@
 			<table class="table table-striped table-bordered">
 				<thead>
 					<tr class="bg-primary text-white">
-						<th>Sr#</th>
+						<th>#</th>
 						<th>Usuário Nome</th>
 						<th>Usuário Email</th>
 						<th>Usuário Telefone</th>
@@ -161,8 +161,8 @@
 						<td><?php echo $val['usuario_telefone'];?></td>
 						<td align="center"><?php echo date('Y-m-d',strtotime($val['dt']));?></td>
 						<td align="center">
-							<a href="edit-usuario.php?editId=<?php echo $val['usuario_id'];?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Editar</a> | 
-							<a href="delete.php?delId=<?php echo $val['usuario_id'];?>" class="text-danger" onClick="return confirm('Are you sure to delete this user?');"><i class="fa fa-fw fa-trash"></i> Deletar</a>
+							<a href="edit-usuario.php?editId=<?php echo $val['id'];?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Editar</a> | 
+							<a href="delete.php?delId=<?php echo $val['id'];?>" class="text-danger" onClick="return confirm('Tem certeza que deseja excluir este usuário?');"><i class="fa fa-fw fa-trash"></i> Deletar</a>
 						</td>
 
 					</tr>
@@ -174,7 +174,7 @@
 					<?php } ?>
 				</tbody>
 			</table>
-		</div> <!--/.col-sm-12-->
+		</div>
 		
 	</div>
 	
@@ -199,7 +199,6 @@
 				  })
 			 });
 			 
-			 //From, To date range start
 			var dateFormat	=	"yy-mm-dd";
 			fromDate	=	$(".fromDate").datepicker({
 				changeMonth: true,
@@ -228,8 +227,6 @@
 				}
 				return date;
 			}
-			//From, To date range End here	
-			
 		});
 	</script>
 </body>
